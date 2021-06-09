@@ -21,28 +21,22 @@ class Api::V1::SubscriptionsController < ApplicationController
   # end
   #
   def update
-    # require "pry"; binding.pry
-    # subscription = Subscription.where(id: update_subscription_params[:subscription_id].to_i)
     subscription = Subscription.where(id: params[:id].to_i)
 
-  # update_subscription = subscription.update(update_subscription_params)
+    update_subscription = subscription.update(update_subscription_params)
 
+    # if subscription.first.status == "ordered"
+    #   subscription.first.status = "cancelled"
+    # elsif subscription.first.status == "cancelled"
+    #   subscription.first.status = "ordered"
+    # end
 
-    if subscription.first.status == "ordered"
-      subscription.first.status = "cancelled"
-    elsif subscription.first.status == "cancelled"
-      subscription.first.status = "ordered"
-    end
-
-    # subscription.save
-
-    render json: subscription
-    # render json: subscription
+    render json: update_subscription
   end
 
   private
 
   def update_subscription_params
-    params.permit(:name, :status, :price, :frequency_delivered)
+    params.permit(:status)
   end
 end

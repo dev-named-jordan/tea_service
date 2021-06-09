@@ -32,10 +32,18 @@ RSpec.describe 'Update CustomerSubscription', type: :request do
   end
     it 'It can update a customer subscription', :vcr do
 
-    put "/api/v1/customers/#{@customer_1.id}/subscriptions/#{@subscription_1.id}"
+    put "/api/v1/customers/#{@customer_1.id}/subscriptions/#{@subscription_1.id}?status=cancelled"
 
     customer_subscription = JSON.parse(response.body, symbolize_names:true)
-# require "pry"; binding.pry
-#     expect(@subscription_1.status).to eq("cancelled")
+
+    expect(customer_subscription.first[:status]).to eq("cancelled")
+  end
+    it 'It can update a customer subscription', :vcr do
+
+    put "/api/v1/customers/#{@customer_1.id}/subscriptions/#{@subscription_2.id}?status=ordered"
+
+    customer_subscription = JSON.parse(response.body, symbolize_names:true)
+
+    expect(customer_subscription.first[:status]).to eq("ordered")
   end
 end
