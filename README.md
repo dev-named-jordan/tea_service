@@ -1,24 +1,12 @@
-# README
+# tea_service
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### Endpoints
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+HTTP verb   | Path                                                          | Use
+------------|---------------------------------------------------------------|-------------------------------------------
+POST        | /api/v1/customers/:customer_id/subscriptions/:subscription_id | Subscribe a customer to a tea subscription, and create a subscription
+PUT         | /api/v1/customers/:customer_id/subscriptions/:subscription_id | Update a customer's tea subscription status to ordered, or canceled)
+GET         | /api/v1//customers/:customer_id/subscriptions                 | See customer's total subscriptions
+GET         | /api/v1//customers                                            | View all customer's
+GET         | /api/v1//customers/:customer_id                               | View one customer's info
