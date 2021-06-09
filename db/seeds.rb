@@ -10,7 +10,7 @@
 Tea.delete_all
 Subscription.delete_all
 Customer.delete_all
-SubscriptionTea.delete_all
+TeaSubscription.delete_all
 CustomerSubscription.delete_all
 
 
