@@ -24,7 +24,6 @@ class Api::V1::SubscriptionsController < ApplicationController
     # require "pry"; binding.pry
     # subscription = Subscription.where(id: update_subscription_params[:subscription_id].to_i)
     subscription = Subscription.where(id: params[:id].to_i)
-require "pry"; binding.pry
 
   # update_subscription = subscription.update(update_subscription_params)
 
@@ -35,7 +34,9 @@ require "pry"; binding.pry
       subscription.first.status = "ordered"
     end
 
-    render json: update_subscription
+    # subscription.save
+
+    render json: subscription
     # render json: subscription
   end
 
