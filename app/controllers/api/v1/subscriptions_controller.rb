@@ -1,4 +1,5 @@
 class Api::V1::SubscriptionsController < ApplicationController
+  # before_action :subscription_params, only: [:create, :update]
 
   def index
     customer_subscriptions = CustomerSubscription.where(customer_id: params[:customer_id])
@@ -11,4 +12,21 @@ class Api::V1::SubscriptionsController < ApplicationController
 
     render json: subscriptions
   end
+
+  # def create
+  #   require "pry"; binding.pry
+  #   subscription = Subscription.create!(subscription_params)
+  #
+  #   render json: subscription
+  # end
+  #
+  # def update
+  #
+  # end
+  #
+  # private
+  #
+  # def subscription_params
+  #   params.permit(:name, :status, :price, :frequency_delivered)
+  # end
 end
