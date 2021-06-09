@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :tea_subscription do
-    references { "" }
-    references { "" }
+    subscription { nil }
+    tea { nil }
   end
 end
