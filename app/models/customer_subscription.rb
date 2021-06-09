@@ -1,0 +1,2 @@
+class CustomerSubscription < ApplicationRecord
+end
