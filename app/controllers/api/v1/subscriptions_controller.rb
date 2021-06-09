@@ -1,4 +1,5 @@
 class Api::V1::SubscriptionsController < ApplicationController
+  before_action :update_subscription_params, only: [:update]
 
   def index
     customer_subscriptions = CustomerSubscription.where(customer_id: params[:customer_id])
@@ -10,5 +11,37 @@ class Api::V1::SubscriptionsController < ApplicationController
     subscriptions = [subscriptions_1, subscriptions_2]
 
     render json: subscriptions
+  end
+
+  # def create
+  #   require "pry"; binding.pry
+  #   subscription = Subscription.create!(subscription_params)
+  #
+  #   render json: subscription
+  # end
+  #
+  def update
+    # require "pry"; binding.pry
+    # subscription = Subscription.where(id: update_subscription_params[:subscription_id].to_i)
+    subscription = Subscription.where(id: params[:id].to_i)
+require "pry"; binding.pry
+
+  # update_subscription = subscription.update(update_subscription_params)
+
+
+    if subscription.first.status == "ordered"
+      subscription.first.status = "cancelled"
+    elsif subscription.first.status == "cancelled"
+      subscription.first.status = "ordered"
+    end
+
+    render json: update_subscription
+    # render json: subscription
+  end
+
+  private
+
+  def update_subscription_params
+    params.permit(:name, :status, :price, :frequency_delivered)
   end
 end
