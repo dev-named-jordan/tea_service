@@ -32,10 +32,10 @@ RSpec.describe 'Create CustomerSubscription', type: :request do
   end
     it 'It can create a customer subscription', :vcr do
 
-    post "/api/v1/customers/#{@customer_1.id}/subscriptions/#{@subscription_1.id}"
+    put "/api/v1/customers/#{@customer_1.id}/subscriptions/#{@subscription_1.id}"
 
     customer_subscription = JSON.parse(response.body, symbolize_names:true)
-
+# require "pry"; binding.pry
     expect(response).to be_successful
     expect(response.status).to eq(200)
     expect(customer_subscription[:id]).to be_an(Integer)
@@ -43,5 +43,6 @@ RSpec.describe 'Create CustomerSubscription', type: :request do
     expect(customer_subscription[:customer_id]).to be_an(Integer)
     expect(customer_subscription[:created_at]).to be_an(String)
     expect(customer_subscription[:updated_at]).to be_an(String)
+    expect(@subscription_1.status).to eq("cancelled")
   end
 end
