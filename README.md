@@ -86,6 +86,9 @@ All Available Teas
 
 <img width="806" alt="Screen Shot 2021-06-10 at 12 24 27 PM" src="https://user-images.githubusercontent.com/68141454/121577500-cdf55300-c9e6-11eb-8ac8-4bcdf753ac0b.png">
 
+All subscriptions
+
+![Screen Shot 2021-06-10 at 1 33 05 PM](https://user-images.githubusercontent.com/68141454/121586026-65ab6f00-c9f0-11eb-82b7-c0035a3b690c.png)
 
 ##### Running Tests
 - To run the full test suite run the below in your terminal:
