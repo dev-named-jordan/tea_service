@@ -35,7 +35,7 @@ RSpec.describe 'Customer Subscriptions index request', type: :request do
     get "/api/v1/customers/#{@customer_1.id}/subscriptions"
 
     subscriptions = JSON.parse(response.body, symbolize_names:true)
-# require "pry"; binding.pry
+
     expect(response).to be_successful
     expect(response.status).to eq(200)
     expect(subscriptions.first.keys).to match_array [:id, :name, :status, :price, :frequency_delivered, :created_at, :updated_at]
