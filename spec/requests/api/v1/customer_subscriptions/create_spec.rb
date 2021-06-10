@@ -37,11 +37,11 @@ RSpec.describe 'Create CustomerSubscription', type: :request do
     customer_subscription = JSON.parse(response.body, symbolize_names:true)
 
     expect(response).to be_successful
-    expect(response.status).to eq(200)
-    expect(customer_subscription[:id]).to be_an(Integer)
-    expect(customer_subscription[:subscription_id]).to be_an(Integer)
-    expect(customer_subscription[:customer_id]).to be_an(Integer)
-    expect(customer_subscription[:created_at]).to be_an(String)
-    expect(customer_subscription[:updated_at]).to be_an(String)
+    expect(response.status).to eq(201)
+    expect(customer_subscription[:data][:id]).to be_a(String)
+    expect(customer_subscription[:data][:type]).to be_a(String)
+    expect(customer_subscription[:data][:attributes]).to be_a(Hash)
+    expect(customer_subscription[:data][:attributes][:subscription_id]).to be_an(Integer)
+    expect(customer_subscription[:data][:attributes][:customer_id]).to be_an(Integer)
   end
 end

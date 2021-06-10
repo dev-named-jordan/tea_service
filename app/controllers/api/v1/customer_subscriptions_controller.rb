@@ -1,29 +1,16 @@
 class Api::V1::CustomerSubscriptionsController < ApplicationController
   before_action :create_customer_subscription_params, only: [:create, :update]
 
-  # def index
-    # require "pry"; binding.pry
-    # customer_subscriptions = CustomerSubscription.where(customer_id: "")
-    # render json: customer_subscriptions
-  # end
-
   def create
     subscription = Subscription.where(id: create_customer_subscription_params[:subscription_id].to_i)
-
     subscription.first.status = "ordered"
-
-    customer_subscription = CustomerSubscription.create!(customer_id: create_customer_subscription_params[:customer_id], subscription_id: create_customer_subscription_params[:subscription_id])
-    render json: customer_subscription
+    customer_subscription = CustomerSubscription.new(customer_id: create_customer_subscription_params[:customer_id], subscription_id: create_customer_subscription_params[:subscription_id])
+    if customer_subscription.save
+      render json: CustomerSubscriptionSerializer.new(customer_subscription), status: 201
+    else
+      render json: {data: { error: "unable to subscribe"}}, status: 400
+    end
   end
-
-  # def update
-  #   subscription = Subscription.where(id: create_customer_subscription_params[:subscription_id].to_i)
-  #
-  #   subscription.first.status = "cancelled"
-  #
-  #   # customer_subscription = CustomerSubscription.find_by(customer_id: create_customer_subscription_params[:customer_id], subscription_id:create_customer_subscription_params[:subscription_id])
-  #   render json: subscription
-  # end
 
   private
 
