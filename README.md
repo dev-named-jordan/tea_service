@@ -80,6 +80,10 @@ Specific Customer
 
 ![Screen Shot 2021-06-10 at 10 26 19 AM](https://user-images.githubusercontent.com/68141454/121562040-4dc6f180-c9d6-11eb-97a9-b70c40f5fe3d.png)
 
+All Available Teas
+
+<img width="806" alt="Screen Shot 2021-06-10 at 12 24 27 PM" src="https://user-images.githubusercontent.com/68141454/121577500-cdf55300-c9e6-11eb-8ac8-4bcdf753ac0b.png">
+
 
 ##### Running Tests
 - To run the full test suite run the below in your terminal:
