@@ -1,23 +1,26 @@
 # tea_service
 
 ### Created by:
+
 - [Jordan Beck](https://github.com/jordanfbeck0528) | [LinkedIn](https://www.linkedin.com/in/jordan-f-beck/)
 
 ### About
 
-Take Home challenge for Turing Mod 4. Expose API for Tea Subscription Service - https://github.com/turingschool-examples/mod4-tech-challenges/blob/main/take-homes/be-take-home.md
+Take Home challenge for Turing Mod 4. We were given 3 endpoints to expose for an Tea Subscription Service API. Makes use of Schema Migrations, Routes, Serializers, MVC, TDD with Request and Model testing, with Model validations, Rspec, Capybara, Error Handling, Active Record, and Fast JSON.  
 
-### Example 
-
+- https://github.com/turingschool-examples/mod4-tech-challenges/blob/main/take-homes/be-take-home.md
 
 #### Built With
+
 * [Ruby on Rails](https://rubyonrails.org)
 
 
 #### Tested With
+
 This project was tested with:
 * [RSpec](https://rspec.info/)
 * [Capybara](https://github.com/teamcapybara/capybara)
+* [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
 
 #### Prerequisites
 
@@ -78,7 +81,6 @@ Specific Customer
 ![Screen Shot 2021-06-10 at 10 26 19 AM](https://user-images.githubusercontent.com/68141454/121562040-4dc6f180-c9d6-11eb-97a9-b70c40f5fe3d.png)
 
 
-### Testing
 ##### Running Tests
 - To run the full test suite run the below in your terminal:
 ```
