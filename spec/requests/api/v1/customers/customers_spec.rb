@@ -38,13 +38,14 @@ RSpec.describe 'Customers request', type: :request do
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
-    expect(customers.first.keys).to match_array [:id, :first_name, :last_name, :email, :street_address, :created_at, :updated_at]
-    expect(customers.first).to be_a(Hash)
-    expect(customers.first[:id]).to be_an(Integer)
-    expect(customers.first[:first_name]).to be_a(String)
-    expect(customers.first[:last_name]).to be_a(String)
-    expect(customers.first[:email]).to be_a(String)
-    expect(customers.first[:street_address]).to be_a(String)
+    expect(customers[:data].first[:attributes]).to be_a(Hash)
+    expect(customers[:data].first[:attributes].keys).to match_array [:first_name, :last_name, :email, :street_address]
+    expect(customers[:data].first).to be_a(Hash)
+    expect(customers[:data].first[:id]).to be_an(String)
+    expect(customers[:data].first[:attributes][:first_name]).to be_a(String)
+    expect(customers[:data].first[:attributes][:last_name]).to be_a(String)
+    expect(customers[:data].first[:attributes][:email]).to be_a(String)
+    expect(customers[:data].first[:attributes][:street_address]).to be_a(String)
   end
   it 'It can list a specific customers details', :vcr do
 

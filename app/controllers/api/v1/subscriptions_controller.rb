@@ -5,7 +5,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     customer = Customer.find(params[:customer_id])
     subscriptions = customer.subscriptions
     if customer.blank?
-      render json: {'Message': {'Error': 'No Customer'}}, status: :bad_request
+      render json: { 'Message': { 'Error': 'No Customer' } }, status: :bad_request
     else
       render json: SubscriptionSerializer.new(subscriptions)
     end
@@ -17,7 +17,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     if update_subscription
       render json: SubscriptionSerializer.new(update_subscription), status: 201
     else
-      render json: {data: { error: "unable to subscribe"}}, status: 400
+      render json: { data: { error: "Unable to Subscribe" } }, status: 400
     end
   end
 
