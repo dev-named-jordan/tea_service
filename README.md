@@ -70,25 +70,9 @@ GET         | /api/v1/subscriptions                                             
 
 #### API Contract
 
-All Subscriptions by Customer
+Visit the Gist below, to see API Contract
 
-![Screen Shot 2021-06-10 at 10 16 00 AM](https://user-images.githubusercontent.com/68141454/121560578-e492ae80-c9d4-11eb-8ecf-99f1978ed8dd.png)
-
-All Customers
-
-![Screen Shot 2021-06-10 at 10 25 28 AM](https://user-images.githubusercontent.com/68141454/121561972-3ab42180-c9d6-11eb-9308-d5ab66ce6d0a.png)
-
-Specific Customer
-
-![Screen Shot 2021-06-10 at 10 26 19 AM](https://user-images.githubusercontent.com/68141454/121562040-4dc6f180-c9d6-11eb-97a9-b70c40f5fe3d.png)
-
-All Available Teas
-
-<img width="806" alt="Screen Shot 2021-06-10 at 12 24 27 PM" src="https://user-images.githubusercontent.com/68141454/121577500-cdf55300-c9e6-11eb-8ac8-4bcdf753ac0b.png">
-
-All subscriptions
-
-![Screen Shot 2021-06-10 at 1 33 05 PM](https://user-images.githubusercontent.com/68141454/121586026-65ab6f00-c9f0-11eb-82b7-c0035a3b690c.png)
+##### - https://gist.github.com/jordanfbeck0528/89cad985f11662907ff1f70f33c8eec2
 
 ##### Running Tests
 - To run the full test suite run the below in your terminal:
