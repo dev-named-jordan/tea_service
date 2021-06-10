@@ -66,7 +66,6 @@ GET         | /api/v1/customers/:customer_id                                    
 #### API Contract
 ![Screen Shot 2021-06-10 at 10 16 00 AM](https://user-images.githubusercontent.com/68141454/121560578-e492ae80-c9d4-11eb-8ecf-99f1978ed8dd.png)
 
-
 ### Testing
 ##### Running Tests
 - To run the full test suite run the below in your terminal:
