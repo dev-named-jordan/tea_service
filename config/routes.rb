@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :teas, only: [:index]
+      resources :subscriptions, only: [:index]
       resources :customers, only: [:index, :show] do
         post '/subscriptions/:subscription_id', to: 'customer_subscriptions#create'
-        resources :subscriptions, only: [:index, :update, :create]
+        resources :subscriptions, only: [:index, :update]
       end
     end
   end

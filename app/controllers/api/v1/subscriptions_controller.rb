@@ -2,11 +2,16 @@ class Api::V1::SubscriptionsController < ApplicationController
   before_action :update_subscription_params, only: [:update]
 
   def index
-    customer = Customer.find(params[:customer_id])
-    subscriptions = customer.subscriptions
-    if customer.blank?
-      render json: { 'Message': { 'Error': 'No Customer' } }, status: :bad_request
+    if params[:customer_id]
+      customer = Customer.find(params[:customer_id])
+      subscriptions = customer.subscriptions
+      if customer.blank?
+        render json: { 'Message': { 'Error': 'No Customer' } }, status: :bad_request
+      else
+        render json: SubscriptionSerializer.new(subscriptions)
+      end
     else
+      subscriptions = Subscription.all
       render json: SubscriptionSerializer.new(subscriptions)
     end
   end

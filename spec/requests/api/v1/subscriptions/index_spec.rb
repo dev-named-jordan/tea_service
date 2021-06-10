@@ -30,9 +30,19 @@ RSpec.describe 'Customer Subscriptions index request', type: :request do
     @customer_subscription_3 = CustomerSubscription.create!(subscription_id: @subscription_3.id, customer_id: @customer_2.id)
     @customer_subscription_4 = CustomerSubscription.create!(subscription_id: @subscription_4.id, customer_id: @customer_3.id)
   end
-    it 'It can list all of a customer subscriptions', :vcr do
+  it 'It can list all of a customer subscriptions', :vcr do
 
     get "/api/v1/customers/#{@customer_1.id}/subscriptions"
+
+    subscriptions = JSON.parse(response.body, symbolize_names:true)
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+    expect(subscriptions[:data].first[:attributes].keys).to match_array [:name, :status, :price, :frequency_delivered]
+  end
+  it 'It can list all subscriptions', :vcr do
+
+    get "/api/v1/subscriptions"
 
     subscriptions = JSON.parse(response.body, symbolize_names:true)
 
