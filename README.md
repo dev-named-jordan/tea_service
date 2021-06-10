@@ -65,6 +65,7 @@ GET         | /api/v1/customers/:customer_id/subscriptions                      
 GET         | /api/v1/customers                                                              | View all customer's
 GET         | /api/v1/customers/:customer_id                                                 | View one customer's info
 GET         | /api/v1/teas                                                                   | View all available teas
+GET         | /api/v1/subscriptions                                                          | View all subscriptions
 
 
 #### API Contract
