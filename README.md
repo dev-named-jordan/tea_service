@@ -64,7 +64,19 @@ GET         | /api/v1/customers/:customer_id                                    
 
 
 #### API Contract
+
+All Subscriptions by Customer
+
 ![Screen Shot 2021-06-10 at 10 16 00 AM](https://user-images.githubusercontent.com/68141454/121560578-e492ae80-c9d4-11eb-8ecf-99f1978ed8dd.png)
+
+All Customers
+
+![Screen Shot 2021-06-10 at 10 25 28 AM](https://user-images.githubusercontent.com/68141454/121561972-3ab42180-c9d6-11eb-9308-d5ab66ce6d0a.png)
+
+Specific Customer
+
+![Screen Shot 2021-06-10 at 10 26 19 AM](https://user-images.githubusercontent.com/68141454/121562040-4dc6f180-c9d6-11eb-97a9-b70c40f5fe3d.png)
+
 
 ### Testing
 ##### Running Tests
