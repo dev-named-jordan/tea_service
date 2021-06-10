@@ -4,25 +4,31 @@
 
 - [Jordan Beck](https://github.com/jordanfbeck0528) | [LinkedIn](https://www.linkedin.com/in/jordan-f-beck/)
 
+
 ### About
 
 Take Home challenge for Turing Mod 4. We were given 3 endpoints to expose for an Tea Subscription Service API. Makes use of Schema Migrations, Routes, Serializers, MVC, TDD with Request and Model testing, with Model validations, Rspec, Capybara, Error Handling, Active Record, and Fast JSON.  
 
 - https://github.com/turingschool-examples/mod4-tech-challenges/blob/main/take-homes/be-take-home.md
 
+
 #### Built With
+
 
 * [Ruby on Rails](https://rubyonrails.org)
 
 
 #### Tested With
 
+
 This project was tested with:
 * [RSpec](https://rspec.info/)
 * [Capybara](https://github.com/teamcapybara/capybara)
 * [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)
 
+
 #### Prerequisites
+
 
 * __Ruby__
 
@@ -36,7 +42,9 @@ This project was tested with:
 
   - Visit the [postgresapp](https://postgresapp.com/downloads.html) homepage and follow their instructions to download the latest version of Postgres app.
 
+
 #### Installing
+
 
 1. Clone the repo
   ```
@@ -56,6 +64,7 @@ This project was tested with:
 
 ### Endpoints
 
+
 HTTP verb   | Path                                                                           | Use
 ------------|--------------------------------------------------------------------------------|-------------------------------------------
 POST        | /api/v1/customers/:customer_id/subscriptions/:subscription_id                  | Create a subscription for Customer
@@ -70,9 +79,11 @@ GET         | /api/v1/subscriptions                                             
 
 #### API Contract
 
+
 Visit the Gist below, to see API Contract
 
 ##### - https://gist.github.com/jordanfbeck0528/89cad985f11662907ff1f70f33c8eec2
+
 
 ##### Running Tests
 - To run the full test suite run the below in your terminal:
@@ -83,7 +94,6 @@ $ bundle exec rspec
 ```
 $ bundle exec rspec <file path>
 ```
-
 
 ### Database Schema
 
