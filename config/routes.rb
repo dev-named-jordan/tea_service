@@ -6,7 +6,6 @@ Rails.application.routes.draw do
       resources :customers, only: [:index, :show] do
         post '/subscriptions/:subscription_id', to: 'customer_subscriptions#create'
         resources :subscriptions, only: [:index, :update, :create]
-        # resources :customer_subscriptions, only: [:index, :update, :create]
       end
     end
   end
