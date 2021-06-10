@@ -36,7 +36,7 @@ RSpec.describe 'Update CustomerSubscription', type: :request do
 
     customer_subscription = JSON.parse(response.body, symbolize_names:true)
 
-    expect(customer_subscription.first[:status]).to eq("cancelled")
+    expect(customer_subscription[:data].first[:attributes][:status]).to eq("cancelled")
   end
     it 'It can update a customer subscription', :vcr do
 
@@ -44,6 +44,6 @@ RSpec.describe 'Update CustomerSubscription', type: :request do
 
     customer_subscription = JSON.parse(response.body, symbolize_names:true)
 
-    expect(customer_subscription.first[:status]).to eq("ordered")
+    expect(customer_subscription[:data].first[:attributes][:status]).to eq("ordered")
   end
 end

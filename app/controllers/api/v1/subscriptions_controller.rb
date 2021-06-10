@@ -4,13 +4,21 @@ class Api::V1::SubscriptionsController < ApplicationController
   def index
     customer = Customer.find(params[:customer_id])
     subscriptions = customer.subscriptions
-    render json: subscriptions
+    if customer.blank?
+      render json: {'Message': {'Error': 'No Customer'}}, status: :bad_request
+    else
+      render json: SubscriptionSerializer.new(subscriptions)
+    end
   end
 
   def update
     subscription = Subscription.where(id: params[:id].to_i)
     update_subscription = subscription.update(update_subscription_params)
-    render json: update_subscription
+    if update_subscription
+      render json: SubscriptionSerializer.new(update_subscription), status: 201
+    else
+      render json: {data: { error: "unable to subscribe"}}, status: 400
+    end
   end
 
   private

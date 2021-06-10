@@ -38,6 +38,6 @@ RSpec.describe 'Customer Subscriptions index request', type: :request do
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
-    expect(subscriptions.first.keys).to match_array [:id, :name, :status, :price, :frequency_delivered, :created_at, :updated_at]
+    expect(subscriptions[:data].first[:attributes].keys).to match_array [:name, :status, :price, :frequency_delivered]
   end
 end
