@@ -7,7 +7,7 @@
 
 ### About
 
-Take Home challenge for Turing Mod 4. We were given 3 endpoints to expose for an Tea Subscription Service API. Makes use of Schema Migrations, Routes, Serializers, MVC, TDD with Request and Model testing, with Model validations, Rspec, Capybara, Error Handling, Active Record, and Fast JSON.  
+Take Home challenge for Turing Mod 4. We were given 3 endpoints to expose for an Tea Subscription Service API. Makes use of Schema Migrations, Routes, Serializers, MVC, TDD with Request Spec and Model testing, with Model validations, Rspec, Capybara, Error Handling, Active Record, and Fast JSON.  
 
 - https://github.com/turingschool-examples/mod4-tech-challenges/blob/main/take-homes/be-take-home.md
 
